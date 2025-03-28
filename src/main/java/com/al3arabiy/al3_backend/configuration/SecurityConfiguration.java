@@ -1,6 +1,7 @@
 package com.al3arabiy.al3_backend.configuration;
 
 import com.al3arabiy.al3_backend.filters.JwtAuthFilter;
+import com.al3arabiy.al3_backend.properties.AL3Security;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
@@ -30,16 +31,7 @@ public class SecurityConfiguration {
 
     private final JwtAuthFilter jwtAuthFilter;
     private final UserDetailsService userDetailsService;
-
-    private final String[] permissibleRequests = {
-            "/login/**",
-            "/registration/**",
-            "/images/**",
-            "/mp3/**",
-            "/js/**",
-            "/error/**",
-            "/auth-test/authentication-not-required",
-    };
+    private final AL3Security al3Security;
 
     @Bean
     public SecurityFilterChain filterChain(HttpSecurity http) throws Exception {
@@ -50,7 +42,7 @@ public class SecurityConfiguration {
 
         http.authorizeHttpRequests(
                 request -> request
-                        .requestMatchers(permissibleRequests).permitAll()
+                        .requestMatchers(al3Security.getPermissibleRequests()).permitAll()
                         .anyRequest().authenticated()
         );
 

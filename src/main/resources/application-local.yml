@@ -6,6 +6,17 @@ spring.data.mongodb:
   password: Password123
   authentication-database: admin
 
+# no need to be authenticated
+al3-security:
+  permissible-requests:
+    - "/login/**"
+    - "/registration/**"
+    - "/images/**"
+    - "/mp3/**"
+    - "/js/**"
+    - "/error/**"
+    - "/auth-test/authentication-not-required"
+
 logging.level:
   org:
     springframework:
