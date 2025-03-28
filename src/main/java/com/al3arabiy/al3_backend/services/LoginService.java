@@ -1,6 +1,8 @@
 package com.al3arabiy.al3_backend.services;
 
+import com.al3arabiy.al3_backend.dto.CustomUserDetails;
 import com.al3arabiy.al3_backend.dto.LoginRequest;
+import com.al3arabiy.al3_backend.entities.User;
 import com.al3arabiy.al3_backend.repositories.UserRepository;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
@@ -8,7 +10,6 @@ import lombok.RequiredArgsConstructor;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
@@ -31,21 +32,19 @@ public class LoginService {
                 )
         );
 
-        UserDetails user = (UserDetails) authentication.getPrincipal();
+        CustomUserDetails customUserDetails = (CustomUserDetails) authentication.getPrincipal();
 
-        String jwtToken = jwtService.generateToken(user);
+        String jwtToken = jwtService.generateToken(customUserDetails);
 
-        updateUserInfo(loginRequest.username());
+        updateUserInfo(customUserDetails.user());
 
         return jwtToken;
     }
 
-    private void updateUserInfo(String username) {
-        userRepository.findByUsername(username).ifPresent(user -> {
-            user.setLastLoginDate(LocalDateTime.now());
-            user.setLastLoginIp(request.getRemoteAddr());
-            userRepository.save(user);
-        });
+    private void updateUserInfo(User user) {
+        user.setLastLoginDate(LocalDateTime.now());
+        user.setLastLoginIp(request.getRemoteAddr());
+        userRepository.save(user);
     }
 
 }
