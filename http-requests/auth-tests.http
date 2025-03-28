@@ -1,0 +1,13 @@
+GET http://localhost:8080/auth-test/authentication-not-required
+Content-Type: application/json
+
+{}
+
+###
+GET http://localhost:8080/auth-test/authentication-required
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImlhdCI6MTc0MzE3OTE4NiwiZXhwIjoxNzQzMjY1NTg2fQ.X15uV5btyjl_pBen4PGRxrv6SaBv0KDZM3X9lii5RaA
+
+{}
+
+###
