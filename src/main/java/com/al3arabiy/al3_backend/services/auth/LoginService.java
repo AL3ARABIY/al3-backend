@@ -1,9 +1,10 @@
-package com.al3arabiy.al3_backend.services;
+package com.al3arabiy.al3_backend.services.auth;
 
 import com.al3arabiy.al3_backend.dto.CustomUserDetails;
 import com.al3arabiy.al3_backend.dto.LoginRequest;
 import com.al3arabiy.al3_backend.entities.User;
 import com.al3arabiy.al3_backend.repositories.UserRepository;
+import com.al3arabiy.al3_backend.services.security.JwtService;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;

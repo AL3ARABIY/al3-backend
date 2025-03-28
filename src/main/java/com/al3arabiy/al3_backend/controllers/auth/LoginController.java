@@ -1,7 +1,7 @@
-package com.al3arabiy.al3_backend.controllers;
+package com.al3arabiy.al3_backend.controllers.auth;
 
 import com.al3arabiy.al3_backend.dto.LoginRequest;
-import com.al3arabiy.al3_backend.services.LoginService;
+import com.al3arabiy.al3_backend.services.auth.LoginService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -1,4 +1,4 @@
-package com.al3arabiy.al3_backend.services;
+package com.al3arabiy.al3_backend.services.security;
 
 import io.jsonwebtoken.*;
 import org.springframework.security.core.userdetails.UserDetails;

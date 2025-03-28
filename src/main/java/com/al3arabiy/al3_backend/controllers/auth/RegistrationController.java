@@ -1,7 +1,7 @@
-package com.al3arabiy.al3_backend.controllers;
+package com.al3arabiy.al3_backend.controllers.auth;
 
 import com.al3arabiy.al3_backend.dto.RegistrationRequest;
-import com.al3arabiy.al3_backend.services.RegistrationService;
+import com.al3arabiy.al3_backend.services.auth.RegistrationService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpStatus;
 import org.springframework.web.bind.annotation.*;

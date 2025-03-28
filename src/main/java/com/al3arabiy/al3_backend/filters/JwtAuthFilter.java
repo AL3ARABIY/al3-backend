@@ -1,6 +1,6 @@
 package com.al3arabiy.al3_backend.filters;
 
-import com.al3arabiy.al3_backend.services.JwtService;
+import com.al3arabiy.al3_backend.services.security.JwtService;
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
