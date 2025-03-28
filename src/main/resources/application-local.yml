@@ -1,0 +1,13 @@
+spring.data.mongodb:
+  host: localhost
+  port: 27017
+  database: al3
+  username: 34jf1djxc193c
+  password: Password123
+  authentication-database: admin
+
+logging.level:
+  org:
+    springframework:
+      data.*.*: trace
+      cache.*: trace
