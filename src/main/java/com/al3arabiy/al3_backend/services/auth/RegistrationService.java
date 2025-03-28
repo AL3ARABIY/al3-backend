@@ -6,8 +6,9 @@ import com.al3arabiy.al3_backend.repositories.UserRepository;
 import jakarta.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
 
-@Service
+@Service @Validated
 @RequiredArgsConstructor
 public class RegistrationService {
 
