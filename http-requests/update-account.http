@@ -1,0 +1,11 @@
+POST http://localhost:8080/account/update
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ0ZXN0dXNlciIsImlhdCI6MTc0MzE4NjcxNCwiZXhwIjoxNzQzMjczMTE0fQ.R5ZKuYhQbY3IUycQVgR-Wiy1ju7LriDcJ8-_d8eEnv0
+
+{
+  "username": "testuser",
+  "currentPassword": "testpassword"
+
+}
+
+###
