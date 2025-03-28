@@ -38,6 +38,7 @@ public class SecurityConfiguration {
             "/mp3/**",
             "/js/**",
             "/error/**",
+            "/auth-test/authentication-not-required",
     };
 
     @Bean
